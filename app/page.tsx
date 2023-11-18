@@ -12,7 +12,20 @@ import { seedSanityData } from "@/lib/seed"
 interface Props {}
 
 export default async function Page() {
-
+  const products = await client.fetch<SanityProduct[]>(
+    groq`*[_type=="product"]{
+      _id,
+      _createdAt,
+      name,
+      sku,
+      images,
+      currency,
+      price,
+      description,
+      "slug": slug.current
+    }`
+    )
+  console.log(products)
   return (
     <div>
       <div className="px-4 pt-20 text-center">
