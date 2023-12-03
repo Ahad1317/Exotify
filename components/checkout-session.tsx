@@ -6,17 +6,19 @@ import Stripe from "stripe"
 import { useShoppingCart } from "use-shopping-cart"
 
 interface Props {
-  customerDetails: Stripe.Checkout.Session.CustomerDetails | null
+  customerDetails: Stripe.Checkout.Session.CustomerDetails | null;
 }
 
-export function CheckoutSession({customer_details}: Props) {
-  const {clearCart} = useShoppingCart()
-  useEffect(()=>{
-    if (customer_details) {
-      clearCart()
+export function CheckoutSession({ customerDetails }: Props) {
+  const { clearCart } = useShoppingCart();
+
+  useEffect(() => {
+    if (customerDetails) {
+      clearCart();
     }
-  }, [customer_details])
-  if (!customer_details) {
+  }, [customerDetails]);
+
+  if (!customerDetails) {
     return (
       <>
         <XCircle className="mx-auto h-10 w-10 text-red-400" />
@@ -24,7 +26,7 @@ export function CheckoutSession({customer_details}: Props) {
           No checkout session found
         </h1>
       </>
-    )
+    );
   }
 
   return (
@@ -34,13 +36,14 @@ export function CheckoutSession({customer_details}: Props) {
         Order Successful!
       </h1>
       <h3 className="mt-8 text-2xl leading-7">
-        Thank you, <span className="font-extrabold">{customer_details.name}</span>!
+        Thank you, <span className="font-extrabold">{customerDetails.name}</span>!
       </h3>
       <p className="mt-8">
         Check your purchase email{" "}
-        <span className="mx-1 font-extrabold text-indigo-500">{customer_details.email}</span> for
+        <span className="mx-1 font-extrabold text-indigo-500">{customerDetails.email}</span> for
         your invoice.
       </p>
     </>
-  )
+  );
 }
+
