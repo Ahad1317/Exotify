@@ -23,7 +23,7 @@ interface Props {
 export default async function Page({searchParams}: Props) {
   const {data = "desc", price, color, category, size, search} = searchParams
   const priceOrder = price ? `| order(price ${price})` : ""
-  const dateOrder = date ? `| order(_createdAt ${date})` : ""
+  const dateOrder = data ? `| order(_createdAt ${data})` : ""
   const order = `${priceOrder}${dateOrder}`
 
   const productFilters = `_type == "product"`
