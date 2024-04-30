@@ -4,6 +4,8 @@ Welcome to **Exotify** 🚀, your ultimate destination for e-commerce bliss! Div
 
 Built with the modern web in mind, Exotify embraces the latest tech stacks to ensure that your shopping experience is not just satisfactory, but extraordinary. Whether you're a night owl 🦉 or a daydreamer ☀️, our dark mode and fully responsive design cater to your needs, anytime, anywhere.
 
+### 🛒 Check it out here! 👉 [Exotify Live](https://exotify.vercel.app/)
+
 ## Tech Stack 🛠️
 
 Exotify is meticulously crafted with the following technologies, ensuring a robust, scalable, and seamless shopping voyage:
@@ -22,16 +24,39 @@ Exotify is brimming with features designed to enchant your shopping experience:
 - **Swift Search and Filters:** Zoom through our product cosmos with fast and intuitive search and filter options 🚀.
 - **Cart Constellation:** Add items to your cart with a simple wish upon a star 🌟.
 - **Seamless Checkout Process:** Glide through our checkout process, powered by Stripe for a secure passage to order completion 🛡️.
-- **Universal Design:** Our design language speaks to all devices, offering a seamless shopping odyssey whether on desktop, tablet, or mobile 🌍.
+- **Universal Design:** Our design language speaks to all devices, offering a seamless shopping whether on desktop, tablet, or mobile 🌍.
 - **Dark Mode Nightscapes:** Switch to dark mode for a celestial shopping experience under the stars 🌃.
 
 ## Launching Exotify Locally 🌐
 
 Embark on your local Exotify adventure with these simple steps.
 
-### Prerequisites
+Clone the repository:
+```
+git clone https://github.com/Ahad1317/Exotify
+cd Exotify
+```
+Install dependencies:
+```
+npm install
+```
 
+Set up your environment variables:
+```
+Create a .env.local file in the root directory and add the necessary API keys and secrets as follows:
 
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=YOUR_STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY=YOUR_STRIPE_SECRET_KEY
+NEXT_PUBLIC_SANITY_PROJECT_ID=YOUR_SANITY_PROJECT_ID
+NEXT_PUBLIC_SANITY_DATASET=YOUR_SANITY_DATASET_NAME
+```
+Run the development server:
+```
+npm run dev
+```
+Navigate to http://localhost:3000 to see your application in action.
+
+<br>
 
 License 📜
 Distributed under the MIT License. See LICENSE for more information.
